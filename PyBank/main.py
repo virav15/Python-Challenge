@@ -22,6 +22,9 @@ with open(file_path) as csvfile:
         #find total months
 total_months = len(months)
 
+greatest_increase = revenue[0]
+greatest_decrease = revenue[0]
+
 print("Total Months")
 print(total_months)
 
