@@ -7,7 +7,7 @@ import os
 #file_to_load = "raw_data/budget_data.csv"
 #file_to_output = "analysis/budget_analysis.txt"
 #emply lists for month and revenue data
-###
+########
 file_path = os.path.join("raw_data","budget_data.csv")
 
 months = []
