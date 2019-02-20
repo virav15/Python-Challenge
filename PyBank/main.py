@@ -28,11 +28,11 @@ total_revenue = 0
 
 
 for r in range(len(revenue)):
-    if revenue[r] >= greatest_inc:
-        greatest_inc = revenue[r]
+    if revenue[r] >= greatest_increase:
+        greatest_increase = revenue[r]
         great_inc_month = months[r]
-    elif revenue[r] <= greatest_dec:
-        greatest_dec = revenue[r]
+    elif revenue[r] <= greatest_decrease:
+        greatest_decrease = revenue[r]
         great_dec_month = months[r]
     total_revenue += revenue[r]
 
@@ -43,3 +43,6 @@ print("-------------------")
 print("Greatest Increase")
 print(greatest_increase)
 
+print("-------------------")
+print("Greatest Decrease")
+print(greatest_decrease)
