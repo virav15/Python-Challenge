@@ -21,8 +21,8 @@ with open(file_path) as csvfile:
         
 total_months = len(months)
 
-greatest_increase = revenue[0]
-greatest_decrease = revenue[0]
+greatest_increase = profit_loss[0]
+greatest_decrease = profit_loss[0]
 total_profit_loss = 0
 
 
@@ -49,7 +49,7 @@ with open(output_dest, 'w') as writefile:
     writefile.writelines('Total Profits/Losses: $' + str(total_profit_loss) + '\n')
     writefile.writelines('Average  Change: $' + str(average_change) + '\n')
     writefile.writelines('Greatest Increase in Profits: ' + great_inc_month + ' ($' + str(greatest_increase) + ')'+ '\n')
-    writefile.writelines('Greatest Decrease in Loss: ' + great_dec_month + ' ($' + str(greatest_decrease) + ')')
+    writefile.writelines('Greatest Decrease in Profits: ' + great_dec_month + ' ($' + str(greatest_decrease) + ')')
 
 #opens the output file in r mode and prints to terminal
 with open(output_dest, 'r') as readfile:
