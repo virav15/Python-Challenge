@@ -54,7 +54,7 @@ print(f'Average Change: ${average_change:.2f}')
 print(f'Greatest Increase in Profits: {month_inc} ({increase})')
 print(f'Greatest Decrease in Profits: {month_dec} ({decrease})')
 
-with open('PyBank.txt', 'w') as text_file:
+with open('output_csv' , 'PyBank.txt', 'w') as text_file:
     print(f'Financial Analysis', file=text_file)
     print(f'___________________________', file=text_file)
     print(f'Total Months: {total_months}', file=text_file)
