@@ -48,8 +48,8 @@ with open(output_dest, 'w') as writefile:
     writefile.writelines('Total Months: ' + str(total_months) + '\n')
     writefile.writelines('Total Revenue: $' + str(total_revenue) + '\n')
     writefile.writelines('Average Revenue Change: $' + str(average_change) + '\n')
-    writefile.writelines('Greatest Increase in Revenue: ' + great_inc_month + ' ($' + str(greatest_increase) + ')'+ '\n')
-    writefile.writelines('Greatest Decrease in Revenue: ' + great_dec_month + ' ($' + str(greatest_decrease) + ')')
+    writefile.writelines('Greatest Increase in Profits: ' + great_inc_month + ' ($' + str(greatest_increase) + ')'+ '\n')
+    writefile.writelines('Greatest Decrease in Loss: ' + great_dec_month + ' ($' + str(greatest_decrease) + ')')
 
 #opens the output file in r mode and prints to terminal
 with open(output_dest, 'r') as readfile:
