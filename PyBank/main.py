@@ -36,13 +36,22 @@ for r in range(len(revenue)):
         great_dec_month = months[r]
     total_revenue += revenue[r]
 
-print("Total Months")
-print(total_months)
+#calculate average_change
+average_change = round(total_revenue/total_months, 2)
 
-print("-------------------")
-print("Greatest Increase")
-print(greatest_increase)
+#sets path for output file
+output_dest = os.path.join('output_csv','pybank_output' + str(file_num) + '.txt')
 
-print("-------------------")
-print("Greatest Decrease")
-print(greatest_decrease)
+# opens the output destination in write mode and prints the summary
+with open(output_dest, 'w') as writefile:
+    writefile.writelines('Financial Analysis\n')
+    writefile.writelines('----------------------------' + '\n')
+    writefile.writelines('Total Months: ' + str(total_months) + '\n')
+    writefile.writelines('Total Revenue: $' + str(total_revenue) + '\n')
+    writefile.writelines('Average Revenue Change: $' + str(average_change) + '\n')
+    writefile.writelines('Greatest Increase in Revenue: ' + great_inc_month + ' ($' + str(greatest_increase) + ')'+ '\n')
+    writefile.writelines('Greatest Decrease in Revenue: ' + great_dec_month + ' ($' + str(greatest_decrease) + ')')
+
+#opens the output file in r mode and prints to terminal
+with open(output_dest, 'r') as readfile:
+    print(readfile.read())
