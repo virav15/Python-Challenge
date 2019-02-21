@@ -2,15 +2,14 @@ import csv
 import os
 
 
-#emply lists for month and revenue data
+file_num = 2
 
 file_path = os.path.join("raw_data","budget_data.csv")
 
 months = []
 revenue = []
 
-#read csv and parse data into lists
-#revenue list will be list of integers
+
 with open(file_path) as csvfile:
     csvread = csv.reader(csvfile)
     
@@ -19,7 +18,7 @@ with open(file_path) as csvfile:
     for row in csvread:
         months.append(row[0])
         revenue.append(int(row[1]))
-        #find total months
+        
 total_months = len(months)
 
 greatest_increase = revenue[0]
@@ -36,13 +35,13 @@ for r in range(len(revenue)):
         great_dec_month = months[r]
     total_revenue += revenue[r]
 
-#calculate average_change
+
 average_change = round(total_revenue/total_months, 2)
 
-#sets path for output file
+
 output_dest = os.path.join('output_csv','pybank_output' + str(file_num) + '.txt')
 
-# opens the output destination in write mode and prints the summary
+
 with open(output_dest, 'w') as writefile:
     writefile.writelines('Financial Analysis\n')
     writefile.writelines('----------------------------' + '\n')
