@@ -1,8 +1,9 @@
 import csv
+import os
 
-csvpath = 'election_data.csv'
+file_path = os.path.join("raw_data","budget_data.csv")
 
-with open(csvpath, 'r') as csvfile:
+with open(file_path, 'r') as csvfile:
 
     reader = csv.reader(csvfile, delimiter=',')
 
