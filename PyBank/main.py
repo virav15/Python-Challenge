@@ -9,7 +9,7 @@ with open(file_path, 'r') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     
     csv_header = next(reader)
-
+########
     dates = []
     money = []
     change =[]
