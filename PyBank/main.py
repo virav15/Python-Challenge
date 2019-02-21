@@ -8,7 +8,7 @@ file_path = os.path.join("raw_data","budget_data.csv")
 
 months = []
 profit_loss = []
-
+#######
 
 with open(file_path) as csvfile:
     csvread = csv.reader(csvfile)
