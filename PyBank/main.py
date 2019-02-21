@@ -1,56 +1,64 @@
 import csv
 import os
 
-
-file_num = 2
-
 file_path = os.path.join("raw_data","budget_data.csv")
 
-months = []
-profit_loss = []
-#######
+###########
+with open(file_path, 'r') as csvfile:
 
-with open(file_path) as csvfile:
-    csvread = csv.reader(csvfile)
+    reader = csv.reader(csvfile, delimiter=',')
     
-    next(csvread, None)
+    csv_header = next(reader)
 
-    for row in csvread:
-        months.append(row[0])
-        profit_loss.append(int(row[1]))
+    dates = []
+    money = []
+    change =[]
+    change_alt = []
+    previous = 0
+
+    for row in reader:
+        dates.append(row[0])
+        money.append(row[1])
         
-total_months = len(months)
+        diff = int(row[1]) - int(previous)
+        previous = row[1]
+        change.append(diff)
 
-greatest_increase = profit_loss[0]
-greatest_decrease = profit_loss[0]
-total_profit_loss = 0
+zipped = zip(dates, change)
+zipped_lst = list(zipped)
+change.remove(change[0])
+zipped_lst.remove(zipped_lst[0])
 
+   
 
-for r in range(len(profit_loss)):
-    if profit_loss[r] >= greatest_increase:
-        greatest_increase = profit_loss[r]
-        great_inc_month = months[r]
-    elif profit_loss[r] <= greatest_decrease:
-        greatest_decrease = profit_loss[r]
-        great_dec_month = months[r]
-    total_profit_loss += profit_loss[r]
+total_months = len(dates)
+total = sum(map(int, money))
+average_change = sum(change) / len(change)
+increase = max(change)
+decrease = min(change)
 
+month_dec = 0
+month_inc = 0
 
-average_change = round(total_profit_loss/total_months, 2)
+for row in zipped_lst:
+    if row[1] == increase:
+        month_inc = row[0]
+    if row[1] == decrease:
+        month_dec = row[0]
 
+print(f'Financial Analysis')
+print(f'___________________________')
+print(f'Total Months: {total_months}')
+print(f'Total: ${total}')
+print(f'Average Change: ${average_change:.2f}')
+print(f'Greatest Increase in Profits: {month_inc} ({increase})')
+print(f'Greatest Decrease in Profits: {month_dec} ({decrease})')
 
-output_dest = os.path.join('output_csv','pybank_output' + str(file_num) + '.txt')
-
-
-with open(output_dest, 'w') as writefile:
-    writefile.writelines('Financial Analysis\n')
-    writefile.writelines('----------------------------' + '\n')
-    writefile.writelines('Total Months: ' + str(total_months) + '\n')
-    writefile.writelines('Total Profits/Losses: $' + str(total_profit_loss) + '\n')
-    writefile.writelines('Average  Change: $' + str(average_change) + '\n')
-    writefile.writelines('Greatest Increase in Profits: ' + great_inc_month + ' ($' + str(greatest_increase) + ')'+ '\n')
-    writefile.writelines('Greatest Decrease in Profits: ' + great_dec_month + ' ($' + str(greatest_decrease) + ')')
-
-#opens the output file in r mode and prints to terminal
-with open(output_dest, 'r') as readfile:
-    print(readfile.read())
+with open('PyBank.txt', 'w') as text_file:
+    print(f'Financial Analysis', file=text_file)
+    print(f'___________________________', file=text_file)
+    print(f'Total Months: {total_months}', file=text_file)
+    print(f'Total: ${total}', file=text_file)
+    print(f'Average Change: ${average_change:.2f}', file=text_file)
+    print(f'Greatest Increase in Profits: {month_inc} ({increase})', file=text_file)
+    print(f'Greatest Decrease in Profits: {month_dec} ({decrease})', file=text_file)
