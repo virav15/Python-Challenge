@@ -58,7 +58,7 @@ print(f'Greatest Increase in Profits: {month_inc} ({increase})')
 print(f'Greatest Decrease in Profits: {month_dec} ({decrease})\n')
 
 
-with open('PyBank.txt', 'w') as text_file:
+with open('output_csv/PyBank.txt', 'w') as text_file:
     print(f'Financial Analysis\n', file=text_file)
     print(f'___________________________\n', file=text_file)
     print(f'Total Months: {total_months}\n',file=text_file)
