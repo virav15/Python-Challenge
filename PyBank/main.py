@@ -18,7 +18,7 @@ with open(file_path, 'r') as csvfile:
     change =[]
     change_alt = []
     previous = 0
-
+##
     for row in reader:
         dates.append(row[0])
         money.append(row[1])
