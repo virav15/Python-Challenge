@@ -70,3 +70,4 @@ with open('output_csv/PyPoll.txt', 'w') as text_file:
     print(f'-------------------------', file=text_file)
     print(f'Winner: {winner_name}', file=text_file)
     print(f'-------------------------', file=text_file)
+#
