@@ -47,3 +47,14 @@ khan_total = candidate.count('Khan')
 khan_percent = khan_total / total_votes
 
 print(f'Election Results')
+print(f'-------------------------')
+print(f'Total Votes: {total_votes}')
+print(f'-------------------------')
+print(f'Khan: {khan_percent:.3%} ({khan_total})')
+print(f'Correy: {correy_percent:.3%} ({correy_total})')
+print(f'Li: {li_percent:.3%} ({li_total})')
+print(f"O'Tooley: {o_tooley_percent:.3%} ({o_tooley_total})")
+print(f'-------------------------')
+print(f'Winner: {winner_name}')
+print(f'-------------------------')
+########
