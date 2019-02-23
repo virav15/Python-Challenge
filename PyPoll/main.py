@@ -58,7 +58,7 @@ print(f'-------------------------')
 print(f'Winner: {winner_name}')
 print(f'-------------------------')
 ########
-with open('PyPoll.txt', 'w') as text_file:
+with open('output_csv/PyPoll.txt', 'w') as text_file:
     print(f'Election Results', file=text_file)
     print(f'-------------------------', file=text_file)
     print(f'Total Votes: {total_votes}', file=text_file)
