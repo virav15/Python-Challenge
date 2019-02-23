@@ -57,7 +57,7 @@ print(f"O'Tooley: {o_tooley_percent:.3%} ({o_tooley_total})")
 print(f'-------------------------')
 print(f'Winner: {winner_name}')
 print(f'-------------------------')
-########
+
 with open('output_csv/PyPoll.txt', 'w') as text_file:
     print(f'Election Results', file=text_file)
     print(f'-------------------------', file=text_file)
@@ -70,4 +70,3 @@ with open('output_csv/PyPoll.txt', 'w') as text_file:
     print(f'-------------------------', file=text_file)
     print(f'Winner: {winner_name}', file=text_file)
     print(f'-------------------------', file=text_file)
-#
