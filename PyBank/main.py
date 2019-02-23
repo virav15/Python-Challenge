@@ -2,7 +2,7 @@ import csv
 
 
 import os
-file_num = 2
+
 
 file_path = os.path.join("raw_data","budget_data.csv")
 
@@ -57,13 +57,12 @@ print(f'Average Change: ${average_change:.2f}')
 print(f'Greatest Increase in Profits: {month_inc} ({increase})')
 print(f'Greatest Decrease in Profits: {month_dec} ({decrease})\n')
 
-output_dest = os.path.join('output_csv','pybank_output' + str(file_num) + '.txt')
 
-with open('output_csv/PyBank.txt', 'w') as text_file:
-    print(f'Financial Analysis\n')
-    print(f'___________________________\n')
-    print(f'Total Months: {total_months}\n')
-    print(f'Total: ${total}\n')
-    print(f'Average Change: ${average_change:.2f}\n')
-    print(f'Greatest Increase in Profits: {month_inc} ({increase})\n')
-    print(f'Greatest Decrease in Profits: {month_dec} ({decrease})\n')
+with open('PyBank.txt', 'w') as text_file:
+    print(f'Financial Analysis\n', file=text_file)
+    print(f'___________________________\n', file=text_file)
+    print(f'Total Months: {total_months}\n',file=text_file)
+    print(f'Total: ${total}\n',file=text_file)
+    print(f'Average Change: ${average_change:.2f}\n',file=text_file)
+    print(f'Greatest Increase in Profits: {month_inc} ({increase})\n',file=text_file)
+    print(f'Greatest Decrease in Profits: {month_dec} ({decrease})\n',file=text_file)
