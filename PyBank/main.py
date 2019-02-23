@@ -59,7 +59,7 @@ print(f'Greatest Decrease in Profits: {month_dec} ({decrease})\n')
 
 output_dest = os.path.join('output_csv','pybank_output' + str(file_num) + '.txt')
 
-with open(output_dest, 'w') as writefile:
+with open('output_csv/PyBank.txt', 'w') as text_file:
     print(f'Financial Analysis\n')
     print(f'___________________________\n')
     print(f'Total Months: {total_months}\n')
